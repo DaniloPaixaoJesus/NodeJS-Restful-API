@@ -51,17 +51,17 @@ router.route('/contatos')
 
 router.route('/contatos/:id')
 	.get(function(req, res){
-		/*Contato.findById(req.params.id, function(err, data){
+		Contato.findById(req.params.id, function(err, data){
 				if(err){
 					res.send(err);
 				}else{
 					res.json(data);
 				}
-			});*/
-		res.json({message: 'Contatos get ID'});
+			});
+		//res.json({message: 'Contatos get ID'});
 	})
 	.put(function(req, res){
-		/*Contato.findById(req.params.id, function(err, data){
+		Contato.findById(req.params.id, function(err, data){
 				if(err){
 					res.send(err);
 				}else{
@@ -74,25 +74,18 @@ router.route('/contatos/:id')
 						}
 					});
 				}
-			});*/
-		res.json({message: 'Contatos put ID'});
+			});
+		//res.json({message: 'Contatos put ID'});
 	})
 	.delete(function(req, res){
-		/*Contato.remove({_id: req.params.id}, function(err, data){
+		Contato.remove({_id: req.params.id}, function(err, data){
 				if(err){
 					res.send(err);
 				}else{
-					data.nome = req.body.nome;
-					data.save(function(err){
-						if(err){
-							res.send(err);
-						}else{
-							res.json({message: 'Contact deleted successful'});
-						}
-					});
+					res.json({message: 'Contact deleted successful'});
 				}
-			});*/
-		res.json({message: 'Contatos delete ID'});
+			});
+		//res.json({message: 'Contatos delete ID'});
 	});
 
 app.use('/api', router);
